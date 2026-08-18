@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER : markethub_admin
+      POSTGRES_PASSWORD: secret_123
+      POSTGRES_DB: markethub_db
+    ports:
+      - "5433:5433"
