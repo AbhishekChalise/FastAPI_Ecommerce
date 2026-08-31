@@ -6,10 +6,10 @@ from datetime import datetime
 
 
 class ProductCreate(BaseModel):
-    store_id: int # This will come from store model
-    product_name: str  = Field(..., min_length = 2, max_length = 6)
+    store_id: UUID # This will come from store model
+    product_name: str  = Field(..., min_length = 2, max_length = 50)
     product_price: Decimal =  Field(..., ge=0)
-    description: str = Field(..., min_length = 2, max_length = 10)
+    description: str = Field(..., min_length = 2, max_length = 100)
     category_id: UUID = Field(...)
     model_config = ConfigDict(extra="forbid")
 
